@@ -20,10 +20,12 @@ function App() {
     const newItems = [...items, newItem];
     setItems(newItems);
   };
+
   const handleDeleteItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);
     setItems(newItems);
   };
+
   const handleToggleItem = (id) => {
     const newItems = items.map((item) => {
       if (item.id === id) {
@@ -37,6 +39,7 @@ function App() {
   const handleRemoveAllItems = () => {
     setItems([]);
   };
+
   const handleResetToInitial = () => {
     setItems(initialItems);
   };
@@ -47,15 +50,18 @@ function App() {
     });
     setItems(newItems);
   };
+
   const handleMarkAllAsComplete = () => {
-    const newItems = items.map((item) => {
-      return { ...item, packed: true };
-    });
+    console.log("Current items:", items);
+    const newItems = items.map((item) => ({ ...item, packed: true }));
+    console.log("Updated items:", newItems);
     setItems(newItems);
   };
+
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
+
   return (
     <>
       <BackgroundHeading />
@@ -70,12 +76,13 @@ function App() {
           handleDeleteItem={handleDeleteItem}
           handleToggleItem={handleToggleItem}
         />
-        <Sidebar />
-        {handleAddItem}
-        {handleRemoveAllItems}
-        {handleResetToInitial}
-        {handleMarkAllAsComplete}
-        {handleMarkAllAsIncomplete}
+        <Sidebar
+          handleAddItem={handleAddItem}
+          handleRemoveAllItems={handleRemoveAllItems}
+          handleResetToInitial={handleResetToInitial}
+          handleMarkAllAsComplete={handleMarkAllAsComplete}
+          handleMarkAllAsIncomplete={handleMarkAllAsIncomplete}
+        />
       </main>
 
       <Footer />
