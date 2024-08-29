@@ -19,7 +19,7 @@ export default function AddItemForm({ onAddItem }) {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add an item</h2>
+      <h2>Add a project</h2>
       <input
         ref={inputRef}
         value={itemText}
