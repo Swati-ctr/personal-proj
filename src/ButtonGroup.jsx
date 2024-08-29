@@ -37,12 +37,12 @@ export default function ButtonGroup({
       </Button>
       <Button
         onClick={() => {
-          console.log("Remove all projects clicked");
+          console.log("Remove all items clicked");
           handleRemoveAllItems();
         }}
         buttonType='secondary'
       >
-        Remove all projects
+        Remove all items
       </Button>
     </section>
   );
