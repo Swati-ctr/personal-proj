@@ -42,7 +42,7 @@ export default function ButtonGroup({
         }}
         buttonType='secondary'
       >
-        Remove all items
+        Remove all projects
       </Button>
     </section>
   );
