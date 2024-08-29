@@ -8,7 +8,7 @@ const sortingOption = [
     value: "default",
   },
   {
-    label: "Sort by completed ",
+    label: "Sort by complete ",
     value: "packed",
   },
   {
