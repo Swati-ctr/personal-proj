@@ -8,11 +8,11 @@ const sortingOption = [
     value: "default",
   },
   {
-    label: "Sort by packed",
+    label: "Sort by completed ",
     value: "packed",
   },
   {
-    label: "Sort by unpacked",
+    label: "Sort by incomplete",
     value: "unpacked",
   },
 ];
